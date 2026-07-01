@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with Divyansh — Data/AI Engineer." />
+  <title>Contact — Divyansh</title>
+
+  <!-- Mark JS as active BEFORE body renders (no-JS fallback: keeps content visible) -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0a0a0a',
+            surface: '#161616',
+            line: '#2a2a2a',
+            accent: '#14f0c4',
+            accent2: '#f97316',
+            sub: '#a0a0a0',
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-ink text-white font-sans antialiased selection:bg-accent selection:text-ink">
+
+  <!-- Shared animated background — same as the rest of the site -->
+  <div class="page-bg" aria-hidden="true">
+    <div class="hero-bg absolute inset-0"></div>
+    <div class="hero-glow absolute inset-0"></div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-display text-xl font-bold tracking-tight">
+        <span class="text-accent">D</span>ivyansh<span class="text-accent">.</span>
+      </a>
+      <a href="index.html" class="text-sm font-medium text-sub hover:text-accent transition-colors">
+        ← Back to home
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="relative min-h-screen flex items-center justify-center px-6 py-32">
+      <div class="relative z-10 w-full max-w-xl">
+        <!-- Heading -->
+        <div class="text-center mb-10">
+          <p class="reveal text-accent text-sm font-semibold tracking-[0.3em] uppercase mb-4">Let's Connect</p>
+          <h1 class="reveal font-display text-4xl sm:text-5xl font-bold mb-4">
+            <span class="gradient-text">Get in Touch</span>
+          </h1>
+          <p class="reveal text-sub leading-relaxed max-w-md mx-auto">
+            Fill in your details below and I'll get back to you as soon as possible.
+          </p>
+        </div>
+
+        <!-- Contact form card -->
+        <div class="reveal resume-card">
+          <form id="contact-form" action="https://formsubmit.co/divyanshsingh1247@gmail.com" method="POST" class="space-y-5 text-left">
+            <!-- FormSubmit configuration (hidden) -->
+            <input type="hidden" name="_subject" value="New message from your portfolio!" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <!-- Redirect back home after submit -->
+            <input type="hidden" name="_next" value="index.html" />
+
+            <!-- Name -->
+            <div>
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name"
+                class="form-input" placeholder="Your full name" />
+            </div>
+
+            <!-- Contact number -->
+            <div>
+              <label for="phone" class="form-label">Contact No.</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel"
+                class="form-input" placeholder="+91 98765 43210" />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email"
+                class="form-input" placeholder="you@example.com" />
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" rows="4"
+                class="form-input resize-none" placeholder="Tell me about your project or question..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-full">Send Message</button>
+
+            <p class="text-center text-xs text-sub pt-2">
+              Your details are sent straight to my inbox. I'll never share them.
+            </p>
+          </form>
+        </div>
+
+        <!-- Socials -->
+        <div class="reveal flex items-center justify-center gap-6 mt-8">
+          <a href="https://linkedin.com/in/divyansh1247" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    /* Reveal-on-load for the contact page (no scroll needed on a single screen). */
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
+        return;
+      }
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

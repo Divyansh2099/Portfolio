@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Divyansh — Data/AI Engineer. Building intelligent solutions with data." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Divyansh — Data/AI Engineer" />
+  <meta property="og:description" content="Data/AI Engineer passionate about building machine learning systems that solve real problems." />
+  <meta property="og:url" content="https://divyansh2099.github.io/Portfolio/" />
+  <meta property="og:site_name" content="Divyansh Portfolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Divyansh — Data/AI Engineer" />
+  <meta name="twitter:description" content="Data/AI Engineer passionate about building machine learning systems that solve real problems." />
+
+  <title>Divyansh — Data/AI Engineer</title>
+
+  <!-- Mark JS as active BEFORE body renders (no-JS fallback: keeps content visible) -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0a0a0a',
+            surface: '#161616',
+            line: '#2a2a2a',
+            accent: '#14f0c4',
+            accent2: '#f97316',
+            sub: '#a0a0a0',
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" fetchpriority="high" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-ink text-white font-sans antialiased selection:bg-accent selection:text-ink">
+
+  <!-- Fixed animated background — visible across ALL sections -->
+  <div class="page-bg" aria-hidden="true">
+    <div class="hero-bg absolute inset-0"></div>
+    <div class="hero-glow absolute inset-0"></div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#hero" class="font-display text-xl font-bold tracking-tight group">
+        <span class="text-accent">D</span>ivyansh<span class="text-accent">.</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul role="list" class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="#about" class="nav-link hover:text-accent transition-colors">About</a></li>
+        <li><a href="#projects" class="nav-link hover:text-accent transition-colors">Projects</a></li>
+        <li><a href="#resume" class="nav-link hover:text-accent transition-colors">Resume</a></li>
+        <li>
+          <a href="#contact" class="px-4 py-2 rounded-full border border-line hover:border-accent hover:text-accent transition-colors">
+            Contact
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button id="hamburger" aria-label="Open menu" class="md:hidden flex flex-col gap-1.5 p-2">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile menu overlay -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-ink/98 backdrop-blur-lg hidden flex-col items-center justify-center gap-8 text-2xl font-display">
+      <a href="#about" class="mobile-link hover:text-accent transition-colors">About</a>
+      <a href="#projects" class="mobile-link hover:text-accent transition-colors">Projects</a>
+      <a href="#resume" class="mobile-link hover:text-accent transition-colors">Resume</a>
+      <a href="#contact" class="mobile-link hover:text-accent transition-colors">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <p class="reveal text-accent text-sm font-semibold tracking-[0.3em] uppercase mb-4">Data · AI · Machine Learning</p>
+        <h1 class="reveal font-display font-bold leading-none mb-6">
+          <span class="block text-6xl sm:text-7xl md:text-8xl">
+            <span class="gradient-text">Divyansh</span>
+          </span>
+        </h1>
+        <h2 class="reveal font-display text-2xl sm:text-3xl md:text-4xl text-sub mb-6 h-10">
+          <span id="typed"></span><span class="cursor">|</span>
+        </h2>
+        <p class="reveal text-sub text-lg max-w-xl mx-auto mb-10">
+          Turning raw data into intelligent, real-world solutions — one model at a time.
+        </p>
+        <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#projects" class="btn-primary w-full sm:w-auto">View Projects</a>
+          <a href="#contact" class="btn-secondary w-full sm:w-auto">Get in Touch</a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2 text-sub hover:text-accent transition-colors">
+        <span class="text-xs tracking-widest uppercase">Scroll</span>
+        <span class="scroll-mouse"></span>
+      </a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="py-24 md:py-32 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="reveal mb-16">
+          <span class="text-accent text-sm font-mono">01. </span>
+          <span class="section-heading">About Me</span>
+        </div>
+
+        <div class="grid md:grid-cols-5 gap-12 items-center">
+          <!-- Bio -->
+          <div class="md:col-span-3 space-y-6">
+            <p class="reveal text-lg leading-relaxed text-sub">
+              Hi! I'm <span class="text-white font-semibold">Divyansh</span>, a Data/AI Engineer passionate about
+              building machine learning systems that solve real problems. From wrangling messy datasets
+              to deploying models in production, I love the full lifecycle of an intelligent system.
+            </p>
+            <p class="reveal text-lg leading-relaxed text-sub">
+              My toolkit spans classical ML, deep learning, and modern MLOps. I'm especially drawn to
+              <span class="text-accent">NLP</span>, <span class="text-accent">computer vision</span>, and
+              <span class="text-accent">predictive analytics</span> — turning ambiguity into decisions.
+            </p>
+
+            <!-- Tech badges -->
+            <div class="reveal pt-4">
+              <p class="text-sm text-sub uppercase tracking-widest mb-4">Tech Stack</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">TensorFlow</span>
+                <span class="tech-badge">PyTorch</span>
+                <span class="tech-badge">Scikit-learn</span>
+                <span class="tech-badge">Pandas</span>
+                <span class="tech-badge">NumPy</span>
+                <span class="tech-badge">SQL</span>
+                <span class="tech-badge">AWS</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">FastAPI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats / visual -->
+          <div class="md:col-span-2 grid grid-cols-2 gap-4">
+            <div class="reveal stat-card">
+              <div class="stat-number" data-count="7">0</div>
+              <div class="stat-label">Projects Built</div>
+            </div>
+            <div class="reveal stat-card">
+              <div class="stat-number" data-count="15">0</div>
+              <div class="stat-label">Technologies</div>
+            </div>
+            <div class="reveal stat-card">
+              <div class="stat-number" data-count="99">0</div>
+              <div class="stat-label">% Curiosity</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="py-24 md:py-32 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="reveal mb-16">
+          <span class="text-accent text-sm font-mono">02. </span>
+          <span class="section-heading">Featured Projects</span>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Project cards injected via JS, fallback below -->
+          <article class="project-card reveal">
+            <div class="flex items-start justify-between mb-3">
+              <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7l9 6 9-6"/></svg>
+              <div class="flex gap-3 text-sub">
+                <a href="https://github.com/divyansh2099/nlp-sentiment-analyzer" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.5 18.3 4.8 18.3 4.8c.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a>
+                <a href="https://github.com/divyansh2099/nlp-sentiment-analyzer#readme" target="_blank" rel="noopener noreferrer" aria-label="Live demo" class="hover:text-accent transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+              </div>
+            </div>
+            <h3 class="font-display text-xl font-semibold mb-2">NLP Sentiment Analyzer</h3>
+            <p class="text-sub text-sm leading-relaxed mb-4">A transformer-based model that classifies customer reviews in real-time, achieving 94% accuracy across 5 languages. Fine-tuned BERT with FastAPI backend and Streamlit UI.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">BERT</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Streamlit</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="flex items-start justify-between mb-3">
+              <svg class="w-8 h-8 text-accent2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <div class="flex gap-3 text-sub">
+                <a href="#" aria-label="GitHub" class="hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.5 18.3 4.8 18.3 4.8c.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a>
+                <a href="#" aria-label="Live demo" class="hover:text-accent transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+              </div>
+            </div>
+            <h3 class="font-display text-xl font-semibold mb-2">Image Classification Pipeline</h3>
+            <p class="text-sub text-sm leading-relaxed mb-4">End-to-end CNN pipeline for medical image classification with data augmentation and active learning loops.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">CNN</span>
+              <span class="project-tag">Docker</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="flex items-start justify-between mb-3">
+              <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              <div class="flex gap-3 text-sub">
+                <a href="#" aria-label="GitHub" class="hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.5 18.3 4.8 18.3 4.8c.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a>
+                <a href="#" aria-label="Live demo" class="hover:text-accent transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+              </div>
+            </div>
+            <h3 class="font-display text-xl font-semibold mb-2">Real-time Object Detection</h3>
+            <p class="text-sub text-sm leading-relaxed mb-4">YOLOv8-powered detection system running at 30 FPS on edge devices for retail analytics.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="project-tag">YOLOv8</span>
+              <span class="project-tag">OpenCV</span>
+              <span class="project-tag">TensorRT</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="flex items-start justify-between mb-3">
+              <svg class="w-8 h-8 text-accent2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+              <div class="flex gap-3 text-sub">
+                <a href="#" aria-label="GitHub" class="hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.5 18.3 4.8 18.3 4.8c.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a>
+                <a href="#" aria-label="Live demo" class="hover:text-accent transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+              </div>
+            </div>
+            <h3 class="font-display text-xl font-semibold mb-2">Data Visualization Dashboard</h3>
+            <p class="text-sub text-sm leading-relaxed mb-4">Interactive dashboard visualizing 10M+ rows of streaming data with real-time KPIs and drill-downs.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="project-tag">Plotly</span>
+              <span class="project-tag">Dash</span>
+              <span class="project-tag">PostgreSQL</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="flex items-start justify-between mb-3">
+              <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+              <div class="flex gap-3 text-sub">
+                <a href="#" aria-label="GitHub" class="hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.5 18.3 4.8 18.3 4.8c.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a>
+                <a href="#" aria-label="Live demo" class="hover:text-accent transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+              </div>
+            </div>
+            <h3 class="font-display text-xl font-semibold mb-2">Recommendation Engine</h3>
+            <p class="text-sub text-sm leading-relaxed mb-4">Hybrid collaborative + content-based recommender serving personalized suggestions to 500K users.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="project-tag">Surprise</span>
+              <span class="project-tag">Redis</span>
+              <span class="project-tag">Airflow</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="flex items-start justify-between mb-3">
+              <svg class="w-8 h-8 text-accent2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              <div class="flex gap-3 text-sub">
+                <a href="#" aria-label="GitHub" class="hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.5 18.3 4.8 18.3 4.8c.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a>
+                <a href="#" aria-label="Live demo" class="hover:text-accent transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+              </div>
+            </div>
+            <h3 class="font-display text-xl font-semibold mb-2">Predictive Analytics Model</h3>
+            <p class="text-sub text-sm leading-relaxed mb-4">Time-series forecasting model predicting churn with 91% precision, saving $2M annually.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="project-tag">XGBoost</span>
+              <span class="project-tag">Prophet</span>
+              <span class="project-tag">MLflow</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESUME ===================== -->
+    <section id="resume" class="py-24 md:py-32 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="reveal mb-16">
+          <span class="text-accent text-sm font-mono">03. </span>
+          <span class="section-heading">Resume</span>
+        </div>
+
+        <div class="reveal resume-card">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
+            <!-- Document icon -->
+            <div class="shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center bg-surface border border-line text-accent">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 13h6M9 17h6M9 9h2" />
+              </svg>
+            </div>
+
+            <div class="flex-1 text-center sm:text-left">
+              <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                <h3 class="font-display text-xl font-semibold">Divyansh — Resume</h3>
+                <span class="pdf-badge">PDF</span>
+              </div>
+              <p class="text-sub text-sm leading-relaxed mb-5">
+                A complete overview of my background, projects, and skills in Data, AI/ML, and production systems.
+                View it online or download a copy below.
+              </p>
+              <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3">
+                <a href="https://drive.google.com/file/d/1I7IRN8Ablgq2-_BfGmhNMVS9ARqIQn2m/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-auto">
+                  View Resume
+                  <svg class="inline-block w-4 h-4 ml-1.5 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+                <a href="https://drive.google.com/uc?export=download&id=1I7IRN8Ablgq2-_BfGmhNMVS9ARqIQn2m" download class="btn-secondary w-full sm:w-auto">
+                  Download PDF
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="relative py-24 md:py-32 px-6 overflow-hidden">
+      <div class="relative z-10 max-w-3xl mx-auto text-center">
+        <div class="reveal mb-8">
+          <span class="text-accent text-sm font-mono">04. </span>
+          <span class="section-heading">Let's Connect</span>
+        </div>
+
+        <p class="reveal text-sub text-lg mb-10 max-w-xl mx-auto">
+          Have a project in mind, a question, or just want to say hi? Fill out the quick form below and I'll get back to you.
+        </p>
+
+        <a href="contact.html" class="reveal btn-primary inline-block mb-12">
+          Send Me a Message
+        </a>
+
+        <div class="reveal flex items-center justify-center gap-6">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.5 18.3 4.8 18.3 4.8c.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/divyansh1247" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="border-t border-line py-8 px-6">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sub text-sm">
+        <p>© <span id="year"></span> Divyansh. All rights reserved.</p>
+        <p>Built with <span class="text-accent">♥</span> and a lot of <span class="text-accent2">data</span>.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
